@@ -1,9 +1,10 @@
-# React Starter Pack
+# React stopwatch
 
-To use this template click `Use this template`
+ - используйте Observables в коде
 
-### Available Scripts
+ - RxJS подход
 
-`Deploy` - available to deploy your application to gh-pages
+ - функциональный подход
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+   - [DEMO LINK](https://Alex-Levch.github.io/react-stopwatch/)
+
