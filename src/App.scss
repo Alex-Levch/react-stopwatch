@@ -52,12 +52,13 @@ html {
       cursor: pointer;
     }
   }
+
+  &__btn-started {
+    color: green;
+  }
+
+  &__btn-stopped {
+    color: red;
+  }
 }
 
-.button_started {
-  color: green;
-}
-
-.button_stopped {
-  color: red;
-}

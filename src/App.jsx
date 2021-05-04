@@ -71,13 +71,13 @@ export const App = () => {
             }
           }}
         >
-          <span className={status === 'stopped' && 'button_started'}>
+          <span className={status === 'stopped' && 'stopwatch__btn-started'}>
             Start
           </span>
           {` `}
           /
           {` `}
-          <span className={status === 'started' && 'button_stopped'}>
+          <span className={status === 'started' && 'stopwatch__btn-stopped'}>
             Stop
           </span>
         </button>
