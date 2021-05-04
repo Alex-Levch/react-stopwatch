@@ -1,3 +1,63 @@
-.starter {
-  font-size: 18px;
+$duration: 0.5s;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+  margin: 100px auto;
+  background-color: #5a6e2b;
+  align-items: center;
+  border-radius: 8px;
+
+  &__time {
+    font-size: 46px;
+    color: #f5efef;
+  }
+
+  &__buttons {
+    margin-top: 40px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__btn {
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 3px solid transparent;
+    outline: none;
+    color: rgb(97, 93, 93);
+    transition: color $duration,
+    border $duration,
+    transform $duration;
+
+    &:focus {
+      border: 3px solid rgba(76, 30, 150, 0.63);
+      text-decoration: underline;
+      box-shadow: 0 15px 10px -10px;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+  }
+}
+
+.button_started {
+  color: green;
+}
+
+.button_stopped {
+  color: red;
 }
