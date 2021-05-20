@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -48,9 +48,12 @@ export const App = () => {
     setSecondClick(timeNow);
   };
 
-  const reset = () => {
+  // eslint-disable-next-line no-console
+  console.log('dasasd');
+
+  const reset = useCallback(() => {
     setTime(0);
-  };
+  }, [status]);
 
   const resultedTime = useMemo(() => new Date(time)
     .toISOString().slice(11, 19), [time]);
@@ -71,31 +74,29 @@ export const App = () => {
             }
           }}
         >
-          <span className={status === 'stopped' && 'stopwatch__btn-started'}>
+          <span className={status === 'stopped'
+            ? 'stopwatch__btn-started' : null}
+          >
             Start
           </span>
-          {` `}
-          /
-          {` `}
-          <span className={status === 'started' && 'stopwatch__btn-stopped'}>
+          {` / `}
+          <span className={status === 'started'
+            ? 'stopwatch__btn-stopped' : null}
+          >
             Stop
           </span>
         </button>
         <button
           className="stopwatch__btn"
           type="button"
-          onClick={() => {
-            wait();
-          }}
+          onClick={wait}
         >
           Wait
         </button>
         <button
           className="stopwatch__btn"
           type="button"
-          onClick={() => {
-            reset();
-          }}
+          onClick={reset}
         >
           Reset
         </button>
